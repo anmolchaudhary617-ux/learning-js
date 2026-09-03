@@ -1,3 +1,6 @@
+<!--
+This  file contains the code for both 4i and 4j
+-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,13 +17,16 @@
     ">  
       Price: $7.99
     </p>
-    <button style="
+    <button onclick="alert('Added')" style="
       background-color: yellow;
       font-family: Arial, sans-serif;
     ">
       Add to cart
     </button>
-    <button style="
+    <button 
+      onclick="console.log('Loading...');
+      alert('Purchased')" 
+      style="
       background-color: orange;
       font-family: Arial, sans-serif;
     ">
