@@ -8,93 +8,73 @@
 <body>
   <p>Rock Paper Scissors</p>
   <button onclick="
-    let randomNumber1 = Math.random();
-    let computerMove1 = '';
-
-    if(randomNumber1 > 0 && randomNumber1 <= 1 / 3) {
-      computerMove1 = 'rock';
-      console.log(computerMove1);
-    }
-    else if(randomNumber1 > 1 / 3 && randomNumber1 <= 2 / 3) {
-      computerMove1 = 'paper';
-      console.log(computerMove1);
-    }
-    else {
-      computerMove1 = 'scissors';
-      console.log(computerMove1);
-    }
-
-    if(computerMove1 === 'rock') {
-      alert(`You chose ${computerMove1}. Computer chose rock. Tie.`);
-    }
-    else if(computerMove1 === 'paper') {
-      alert(`You chose ${computerMove1}. Computer chose paper. You lose.`);
-    }
-    else {
-      alert(`You chose ${computerMove1}. Computer chose scissors. You win.`);
-    }
+    playGame('rock');
     ">
     Rock
   </button>
   <button onclick="
-    let randomNumber2 = Math.random();
-    let computerMove2 = '';
-
-    if(randomNumber2 > 0 && randomNumber2 <= 1 / 3) {
-      computerMove2 = 'rock';
-      console.log(computerMove2);
-    }
-    else if(randomNumber2 > 1 / 3 && randomNumber2 <= 2 / 3) {
-      computerMove2 = 'paper';
-      console.log(computerMove2);
-    }
-    else {
-      computerMove2 = 'scissors';
-      console.log(computerMove2);
-    }
-
-    if(computerMove2 === 'rock') {
-      alert('You chose paper. Computer chose rock. You win.');
-    }
-    else if(computerMove2 === 'paper') {
-      alert('You chose paper. Computer chose paper. Tie.');
-    }
-    else {
-      alert('You chose paper. Computer chose scissors. You lose.');
-    }
+    playGame('paper');
     ">
     Paper
   </button>
   <button onclick="
-    let randomNumber3 = Math.random();
-    let computerMove3 = '';
-
-    if(randomNumber3 > 0 && randomNumber3 <= 1 / 3) {
-      computerMove3 = 'rock';
-      console.log(computerMove3);
-    }
-    else if(randomNumber3 > 1 / 3 && randomNumber3 <= 2 / 3) {
-      computerMove3 = 'paper';
-      console.log(computerMove3);
-    }
-    else {
-      computerMove3 = 'scissors';
-      console.log(computerMove3);
-    }
-
-    if(computerMove3 === 'rock') {
-      alert('You chose scissors. Computer chose rock. You lose.');
-    }
-    else if(computerMove3 === 'paper') {
-      alert('You chose scissors. Computer chose paper. You win.');
-    }
-    else {
-      alert('You chose scissors. Computer chose scissors. Tie.');
-    }
+    playGame('scissors');
     ">
     Scissors
   </button>
 
+  <script>
+
+    function playGame(playerMove) {
+
+      const randomNumber = Math.random();
+      let computerMove = '';
+
+      if (randomNumber > 0 && randomNumber <= 1 / 3) {
+        computerMove = 'rock';
+      }
+      else if (randomNumber > 1 / 3 && randomNumber <= 2 / 3) {
+        computerMove = 'paper';
+      }
+      else {
+        computerMove = 'scissors';
+      }
+
+      if (playerMove === 'rock') {
+        if (computerMove === 'rock') {
+          alert(`You chose ${playerMove}. Computer chose ${computerMove}. Tie.`);
+        }
+        else if (computerMove === 'paper') {
+          alert(`You chose ${playerMove}. Computer chose ${computerMove}. You lose.`);
+        }
+        else {
+          alert(`You chose ${playerMove}. Computer chose ${computerMove}. You win.`);
+        }
+      }
+      else if (playerMove === 'paper') {
+        if (computerMove === 'rock') {
+          alert(`You chose ${playerMove}. Computer chose ${computerMove}. You win.`);
+        }
+        else if (computerMove === 'paper') {
+          alert(`You chose ${playerMove}. Computer chose ${computerMove}. Tie.`);
+        }
+        else {
+          alert(`You chose ${playerMove}. Computer chose ${computerMove}. You lose.`);
+        }
+      }
+      else {
+        if (computerMove === 'rock') {
+          alert(`You chose ${playerMove}. Computer chose ${computerMove}. You lose.`);
+        }
+        else if (computerMove === 'paper') {
+          alert(`You chose ${playerMove}. Computer chose ${computerMove}. You win.`);
+        }
+        else {
+          alert(`You chose ${playerMove}. Computer chose ${computerMove}. Tie.`);
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>
