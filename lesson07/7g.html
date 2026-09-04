@@ -1,0 +1,48 @@
+<!--This file also contains code of 7h and 7i-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Practicing functions Part 4-6</title>
+</head>
+
+<body>
+  <script>
+    function convertLength(length, from, to) {
+
+      if(from === 'km' && to === 'miles') {
+        length *= 0.621;
+      }
+      else if(from === 'miles' && to === 'km'){
+        length *= 1.609;
+      }
+      else if(from === 'km' && to === 'ft') {
+        length *= 3281;
+      }
+      else if(from === 'miles' && to === 'ft') {
+        length *= 5280;
+      }
+      else if(from === 'ft' && to === 'km') {
+        length /= 3281
+      }
+      else if(from === 'ft' && to === 'miles') {
+        length /= 5280
+      }
+      else if(from!= 'km' && from!= 'km' && from!= 'km'){
+        console.log(`Invalid unit: ${from}`);
+      }
+      else if(to!= 'km' && to!= 'km' && to!= 'km'){
+        console.log(`Invalid unit: ${to}`);
+      }
+    }
+
+    console.log(convertLength(50, 'miles', 'km'));
+    console.log(convertLength(32, 'km', 'miles'));
+    console.log(convertLength(50, 'km', 'km'));
+    console.log(convertLength(5, 'miles', 'km'));
+    console.log(convertLength(5, 'miles', 'ft'));
+    console.log(convertLength(5, 'km', 'ft'));
+  </script>
+</body>
+
+</html>
