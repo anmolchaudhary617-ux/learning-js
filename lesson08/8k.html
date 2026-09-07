@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+  <button onclick="
+    playgame('Heads');
+  ">
+    heads
+  </button>
+  <button onclick="
+    playgame('Tails');
+  ">
+    tails
+  </button>
+  <button onclick="
+    scoreCount.wins = 0;
+    scoreCount.losses = 0;
+    localStorage.removeItem('score');
+  ">
+    Reset Score
+  </button>
+  <script>
+    let scoreCount = JSON.parse(localStorage.getItem('score')) || {
+      wins: 0,
+      losses: 0
+    }
+
+    function playgame(guess) {
+      const randomNumber = Math.random();
+      const coinToss = (randomNumber < 0.5) ? 'Heads' : 'Tails';
+      let result = '';
+
+      guess === coinToss ? result = 'You win!' : result = 'You lose!';
+
+      if (result === 'You win!') {
+        scoreCount.wins++;
+      }
+      else scoreCount.losses++;
+
+      localStorage.setItem('score', JSON.stringify(scoreCount));
+
+      console.log(result);
+    }
+  </script>
+</body>
+
+</html>
