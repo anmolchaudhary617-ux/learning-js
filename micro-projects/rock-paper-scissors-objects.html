@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>Rock-Paper-Scissors Project</title>
+  <title>Rock-Paper-Scissors Project using Objects</title>
 </head>
 
 <body>
@@ -27,12 +27,13 @@
     scoreCount.losscount = 0;
     scoreCount.wincount = 0;
     scoreCount.tiecount = 0;
+    localStorage.removeItem('score');
   ">
     Reset Score
   </button>
 
   <script>
-    const scoreCount = {
+    const scoreCount = JSON.parse(localStorage.getItem('score')) || {
       wincount: 0,
       losscount: 0,
       tiecount: 0
@@ -96,6 +97,8 @@
       else {
         scoreCount.tiecount++;
       }
+
+      localStorage.setItem('score', JSON.stringify(scoreCount)); 
 
       alert(`You chose ${playerMove}. Computer chose ${computerMove}. ${result} \nWins: ${scoreCount.wincount} Losses: ${scoreCount.losscount} Ties: ${scoreCount.tiecount}`);
     }
