@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practicing DOM part 3</title>
+  </head>
+  <body>
+    <button onclick="
+      document.querySelector('p').innerHTML = 'You chose: heads';  
+    ">
+      heads
+    </button>
+    <button onclick="
+      document.querySelector('p').innerHTML = 'You chose: tails';  
+    ">
+      tails
+    </button>
+    <p></p>
+  </body>
+  <script>
+    console.log(document.querySelector('p'));
+  </script>
+</html>
