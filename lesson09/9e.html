@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Practicing DOM part 5</title>
+</head>
+
+<body>
+  <input type="text" placeholder="Name" onkeydown="
+      textDisplayUsingEnter(event);
+    ">
+  <button onclick="
+      textDisplay();
+    ">
+    Submit
+  </button>
+  <p></p>
+</body>
+<script>
+  function textDisplay() {
+    const text = document.querySelector('input').value;
+    document.querySelector('p').innerHTML = `Your name is ${text}`;
+  }
+
+  function textDisplayUsingEnter(event) {
+    const text = document.querySelector('input').value;
+    if (event.key === 'Enter') {
+      document.querySelector('p').innerHTML = `Your name is ${text}`;
+    }
+  }
+</script>
+
+</html>
