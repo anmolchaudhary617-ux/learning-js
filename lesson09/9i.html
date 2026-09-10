@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Practicing DOM Part 8</title>
+</head>
+
+<body>
+
+  <button onclick="
+      updateCartQuantity(1);
+    ">Add to Cart</button>
+
+  <button onclick="
+      updateCartQuantity(2);
+    ">+2</button>
+
+  <button onclick="
+      updateCartQuantity(3);
+    ">+3</button>
+
+  <button onclick="
+      updateCartQuantity(4);
+    ">+4</button>
+
+  <button onclick="
+      updateCartQuantity(5);
+    ">+5</button>
+
+  <button onclick="
+      updateCartQuantity(-1);
+    ">Remove from cart</button>
+
+  <button onclick="
+      updateCartQuantity(-2);
+    ">-2</button>
+
+  <button onclick="
+      updateCartQuantity(-3);
+    ">-3</button>
+
+  <button onclick="
+      cartQuantity = 0;
+      showQuantity();
+    ">Reset Cart</button>
+
+  <p></p>
+
+  <script>
+    let cartQuantity = 0;
+    showQuantity();
+
+    function updateCartQuantity(change) {
+      if (cartQuantity + change > 10) {
+        document.querySelector('p').innerHTML = 'Too many items in the cart!';
+        return;
+      }
+
+      if (cartQuantity + change < 0) {
+        document.querySelector('p').innerHTML = 'Not enough items in the cart!';
+        return;
+      }
+
+      cartQuantity += change;
+      showQuantity();
+    }
+
+    function showQuantity() {
+      document.querySelector('p').innerHTML = `Cart Quantity: ${cartQuantity}`;
+    }
+  </script>
+</body>
+
+</html>
