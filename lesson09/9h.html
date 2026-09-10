@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Practicing DOM Part 7</title>
+</head>
+
+<body>
+  <input onkeydown="
+    displayText()
+  ">
+
+  <p></p>
+
+  <script>
+    function displayText() {
+      const text = document.querySelector('input').value;
+      document.querySelector('p').innerHTML = text;
+    }
+  </script>
+</body>
+
+</html>
