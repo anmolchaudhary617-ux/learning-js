@@ -1,0 +1,19 @@
+.is-on {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.is-off {
+  background-color: rgb(230, 230, 230);
+  color: black;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
