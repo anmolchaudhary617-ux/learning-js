@@ -1,0 +1,23 @@
+<!--This file comprises code for both 11g and 11h-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Practicing Arrays&Loops Part 1</title>
+</head>
+
+<body>
+  <script>
+    function increaseBy1(array) {
+      for (let i = 0; i < array.length; i++) {
+        array[i]++;
+      }
+      return array;
+    }
+
+    console.log(increaseBy1([1, 2, 3]));
+    console.log(increaseBy1([-2, -1, 0, 99]));
+  </script>
+</body>
+
+</html>
